@@ -37,9 +37,9 @@ video.addEventListener('play', () => {
   faceapi.matchDimensions(canvas, displaySize);
   setInterval(async () => {
     const detections = await faceapi.detectAllFaces(video, new faceapi.SsdMobilenetv1Options());
-    image2 = await faceapi.nets.ssdMobilenetv1.getConvLayer();
+    // image2 = await faceapi.nets.ssdMobilenetv1.getConvLayer();
     grayScale = await faceapi.nets.ssdMobilenetv1.getGrayScale();
-
+    // console.log(image2);
     var idata = ctx.createImageData(width, height);
     idata.data.set(grayScale);
     ctx.putImageData(idata, 0, 0);
